@@ -546,13 +546,24 @@ button {
 .footer-links a:hover {
   opacity: 1;
 }
+
 @media (max-width: 768px) {
+  /* =========================
+     GENERAL
+  ========================= */
+
   .hero {
     padding: 24px;
+    overflow-x: hidden;
   }
+
+  /* =========================
+     NAVBAR
+  ========================= */
 
   .navbar {
     padding: 8px 0;
+    margin-bottom: 20px;
   }
 
   .nav-links {
@@ -562,9 +573,18 @@ button {
   .nav-links a {
     font-size: 10px;
   }
-}
+
+  /* =========================
+     HERO
+  ========================= */
+
   .hero-content {
     margin-top: 60px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    margin-bottom: 16px;
   }
 
   h1 {
@@ -573,6 +593,183 @@ button {
   }
 
   .description {
-    font-size: 16px;
     max-width: 100%;
+    font-size: 16px;
+    line-height: 1.6;
   }
+
+  /* =========================
+     WORK
+  ========================= */
+
+  .work {
+    margin-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .section-label {
+    margin-bottom: 28px;
+    font-size: 10px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .work-card {
+    min-height: auto;
+  }
+
+  .project-preview {
+    height: 360px;
+  }
+
+  /* =========================
+     SERVICES
+  ========================= */
+
+  .services {
+    margin-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .service {
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .service h2 {
+    font-size: 28px;
+  }
+
+  .service p {
+    font-size: 15px;
+  }
+
+  /* =========================
+     STUDIO
+  ========================= */
+
+  .studio {
+    margin-top: 120px;
+    padding: 70px 0;
+  }
+
+  .studio-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-content h2 {
+    font-size: 42px;
+  }
+
+  .studio-content p {
+    font-size: 16px;
+  }
+
+  /* =========================
+     LAB
+  ========================= */
+
+  .lab {
+    margin-top: 120px;
+    padding: 70px 0;
+  }
+
+  .lab-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .lab-content h2 {
+    font-size: 56px;
+  }
+
+  .lab-description p {
+    font-size: 16px;
+  }
+
+  /* =========================
+     PROCESS
+  ========================= */
+
+  .process {
+    margin-top: 120px;
+    padding: 70px 0;
+  }
+
+  .process-step {
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .process-step h2 {
+    font-size: 28px;
+  }
+
+  .process-step p {
+    font-size: 15px;
+  }
+
+  /* =========================
+     FINAL CTA
+  ========================= */
+
+  .final-cta {
+    margin-top: 120px;
+    padding: 90px 0;
+  }
+
+  .cta-content h2 {
+    font-size: 60px;
+    line-height: 0.95;
+    margin-bottom: 40px;
+  }
+
+  /* =========================
+     CONTACT FORM
+  ========================= */
+
+  .contact-form {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+
+  .form-field {
+    margin-bottom: 28px;
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  .footer {
+    margin-top: 70px;
+    padding: 50px 0 25px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+
+  .footer-top h2 {
+    font-size: 48px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-links {
+    gap: 18px;
+  }
+}
