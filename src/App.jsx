@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 import ProjectCard from "./components/ProjectCard";
 import ContactForm from "./components/ContactForm";
 
@@ -63,8 +66,24 @@ const projects = [
 ];
 
 function App() {
+  const app = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".hero-animate", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    }, app);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main className="hero">
+    <main className="hero" ref={app}>
 
       {/* NAVBAR */}
       <nav className="navbar">
@@ -83,9 +102,11 @@ function App() {
 
       {/* HERO */}
       <section className="hero-content">
-        <p className="eyebrow">DIGITAL WEB STUDIO</p>
+        <p className="eyebrow hero-animate">
+          DIGITAL WEB STUDIO
+        </p>
 
-        <h1>
+        <h1 className="hero-animate">
           We build websites
           <br />
           for brands that refuse
@@ -93,12 +114,13 @@ function App() {
           to blend in.
         </h1>
 
-        <p className="description">
+        <p className="description hero-animate">
           Kaelix is a digital studio creating distinctive websites,
           interfaces and digital experiences for ambitious brands.
         </p>
 
         <button
+          className="hero-animate"
           onClick={() => {
             document.getElementById("work").scrollIntoView({
               behavior: "smooth",
