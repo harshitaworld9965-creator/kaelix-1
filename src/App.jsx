@@ -1,3 +1,60 @@
+import ProjectCard from "./components/ProjectCard";
+
+const projects = [
+  {
+    number:"01",
+    title:"Brand Website",
+    description:"Web design & development",
+    preview: (
+      <div className="project-preview preview-one">
+        <div className="mock-nav">
+          <span>NOIR</span>
+          <span>MENU</span>
+        </div>
+        <div className="mock-content">
+          <p>CREATIVE STUDIO</p>
+          <h3>
+            Made to
+            <br/>
+            be noticed.
+
+          </h3>
+        </div>
+      </div>
+    ),
+  },
+  {
+    number:"02",
+    title:"Lunaria",
+    description:"Brand website & digital experience",
+    preview: (
+      <div className="project-preview preview-two">
+        <div className="lunaria-content">
+          <p>BEAUTY STUDIO</p>
+          <h3>Beauty, <br/> reimagined.</h3>
+        </div>
+      </div>
+    ),
+  },
+  {
+    number:"03",
+    title:"Digital Experience",
+    description:"Interactive web experience",
+    preview: (
+      <div className="project-preview preview-three">
+        <div className="aether-content">
+          <p>INTERACTIVE EXPERIENCE</p>
+          <h3>
+            Beyond 
+            <br />
+            the ordinary.
+          </h3>
+        </div>
+      </div> 
+    ),
+  },
+];
+
 function App(){
   return (
     <main className="hero">
@@ -25,42 +82,16 @@ function App(){
         <p className="section-label">SELECTED WORK</p>
 
         <div className="work-grid">
-          <article className="work-card">
-            <div className="project-preview preview-one">
-              <div className="mock-nav">
-                <span>NOIR</span>
-                <span>MENU</span>
-              </div>
-              <div className="mock-content">
-                <p>CREATIVE STUDIO</p>
-                <h3>Made to <br/> be noticed.</h3>
-              </div>
-            </div>
-            <div className="project-info">
-            <span>01</span>
-            <h2>Brand Website</h2>
-            <p>Web design & development</p>
-            </div>
-          </article>
-
-          <article className="work-card">
-            <div className="project-preview preview-two"></div>
-            <div className="project-info">
-            <span>02</span>
-            <h2>Premium Landing Page</h2>
-            <p>Strategy, design & development</p>
-            </div>
-          </article>
-
-          <article className="work-card">
-            <div className="project-preview preview-three"></div>
-            <div className="project-info">
-            <span>03</span>
-            <h2>Digital Experience</h2>
-            <p>Interactive web experience</p>
-            </div>
-          </article>
-        </div>
+        {projects.map((project) => (
+          <ProjectCard 
+          key={project.number}
+          number={project.number}
+          title={project.title}
+          description={project.description}
+          preview={project.preview}
+          />
+        ))}
+</div>
       </section>
 
     </main>
